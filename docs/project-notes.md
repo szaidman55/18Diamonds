@@ -1,7 +1,8 @@
 # Eighteen Diamonds - project notes
 
-Landing page for Eighteen Diamonds Inc, wholesale diamonds and fine jewelry (trade only).
-Contact: info@eighteendiamonds.com. Domain: eighteendiamonds.com (registered at GoDaddy).
+Landing page for Eighteen Diamonds Inc: wholesale diamonds and fine jewelry; buys and sells vintage
+jewelry and watches; buys diamonds.
+Address: 20 W 47th St, New York, NY 10036. Phone: (212) 542-0949. Email: info@eighteendiamonds.com. Domain: eighteendiamonds.com (registered at GoDaddy).
 
 ## Stack
 
@@ -26,7 +27,12 @@ Contact: info@eighteendiamonds.com. Domain: eighteendiamonds.com (registered at 
   on portrait screens (`max-aspect-ratio: 5/4`) the photo is scaled to show the whole sign at the
   top and fades into navy under the copy.
 - Privacy page text is the SMS/mobile wording provided by the owner, used verbatim.
-- Copy avoids specific claims (years in business, location, certifications) until confirmed.
+- Copy avoids specific claims (years in business, opening hours, certifications) until confirmed.
+- No "open a trade account" call to action (owner request); main actions are call and email.
+- Page sections: hero, intro statement, six services, "We buy" band, visit (address, phone, email,
+  Google Maps embed), footer. Navy and ivory alternate. `assets/site.js` handles the header on scroll
+  and fade-in on scroll.
+- Hero height is capped (`clamp(560px, 50vw, 820px)`) so it does not take the whole screen.
 
 ## DNS
 
@@ -46,3 +52,5 @@ npx serve@14.2.4 -l 4321 .
   GoDaddy DNS set: `A @ 216.198.79.1` (new record) and `CNAME www cd4c18f513f8d8da.vercel-dns-017.com`
   (was `eighteendiamonds.com.`). Email records (Microsoft 365 MX, SPF, autodiscover) unchanged.
   Vercel reported www as Valid Configuration; SSL for the apex was being issued.
+- 2026-10-15: redesign: services now include vintage and estate jewelry, watches and diamond buying;
+  address, phone and map added; shorter hero.
