@@ -642,14 +642,18 @@ h3 {
 @media (max-aspect-ratio: 5/4) {
   /* Portrait screens: whole wall sign at the top, copy below it */
   /* At least one full screen, so the next (ivory) section never shows on first load, not even
-     under iPhone Safari's floating toolbar (hence lvh). The copy stays right under the sign; any
-     extra height is plain navy below the buttons */
+     under iPhone Safari's floating toolbar (hence lvh). The bottom padding keeps the copy and the
+     scroll hint in the part of the screen the toolbar does not cover (svh); the copy is centered
+     in the space between the sign and that edge */
   .hero {
-    display: block;
+    display: flex;
+    flex-direction: column;
     height: auto;
     min-height: 100vh;
     min-height: 100lvh;
     padding-top: calc(72px + 36vw);
+    padding-bottom: 0;
+    padding-bottom: calc(100lvh - 100svh);
     --hero-top: 56px;
     --hero-size: 140% auto;
   }
@@ -672,7 +676,72 @@ h3 {
   }
 
   .hero .wrap {
-    padding-bottom: 56px;
+    width: 100%;
+    margin-block: auto;
+    padding-top: 24px;
+    padding-bottom: 88px;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 26px;
+  }
+
+  .hero .lede {
+    margin: 22px auto 40px;
+  }
+
+  /* Discreet scroll-down chevron at the bottom of the visible screen */
+  .hero .scroll-hint {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 28px;
+    bottom: calc(100lvh - 100svh + 28px);
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    opacity: 0.55;
+    transition: opacity 0.2s;
+  }
+
+  .scroll-hint::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    margin-left: -6px;
+    border-right: 1px solid var(--silver-300);
+    border-bottom: 1px solid var(--silver-300);
+    transform: rotate(45deg);
+    animation: scroll-hint 2.4s var(--ease) infinite;
+  }
+
+  .scroll-hint:hover,
+  .scroll-hint:focus-visible {
+    opacity: 1;
+  }
+}
+
+.scroll-hint {
+  display: none;
+}
+
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(45deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint::before {
+    animation: none;
   }
 }
 
