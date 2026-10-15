@@ -20,7 +20,7 @@ The steps below explain how this was set up.
 1. Open the project in the Vercel dashboard.
 2. Go to **Settings > Domains**.
 3. Add `eighteendiamonds.com`. When asked, also add `www.eighteendiamonds.com`
-   (recommended: `www` redirects to `eighteendiamonds.com`).
+   (Vercel recommends redirecting the apex to `www`; that is what is set up).
 4. Vercel then shows the exact DNS records it wants. Keep that page open: if its values differ
    from the ones below, use Vercel's values.
 
