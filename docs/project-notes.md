@@ -29,7 +29,9 @@ Address: 20 W 47th St, New York, NY 10036. Phone: (212) 542-0949. Email: info@ei
 
 - Hero: on landscape screens the photo covers the hero and the copy sits under the wall sign;
   on portrait screens (`max-aspect-ratio: 5/4`) the photo is scaled to show the whole sign at the
-  top and fades into navy under the copy. There the hero is at least one screen tall (`100lvh`, so it also runs under iPhone Safari's floating toolbar) so the
+  top and fades into navy under the copy. There the hero is at least one screen tall (`100lvh`, so it also runs under iPhone Safari's floating toolbar); the copy stays right under
+  the sign and the extra height is plain navy below the buttons (pushing the copy to the bottom
+  left a big gap and put the buttons under the toolbar) so the
   ivory section never shows on first load, and the strip above the photo is plain navy with the photo
   fading into it (the mirrored strip showed a flipped copy of the sign on phones).
 - Privacy page text is the SMS/mobile wording provided by the owner, used verbatim.

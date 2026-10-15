@@ -641,13 +641,11 @@ h3 {
 /* Responsive */
 @media (max-aspect-ratio: 5/4) {
   /* Portrait screens: whole wall sign at the top, copy below it */
-  /* Fills the screen so the next (ivory) section does not show on first load; the copy sits at
-     the bottom. lvh, not svh: iPhone Safari draws its toolbar over the page, and with svh the ivory
-     section showed through under it */
+  /* At least one full screen, so the next (ivory) section never shows on first load, not even
+     under iPhone Safari's floating toolbar (hence lvh). The copy stays right under the sign; any
+     extra height is plain navy below the buttons */
   .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    display: block;
     height: auto;
     min-height: 100vh;
     min-height: 100lvh;
