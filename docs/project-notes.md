@@ -55,3 +55,6 @@ npx serve@14.2.4 -l 4321 .
   Vercel reported www as Valid Configuration; SSL for the apex was being issued.
 - 2026-10-15: redesign: services now include vintage and estate jewelry, watches and diamond buying;
   address, phone and map added; shorter hero.
+- 2026-10-15: footer bottom line: copyright left, "Forged by" + 18 Forge logo centered, linking to
+  https://18forge.com (hover color #f37021), same credit as the 58 Diamonds site. Hero top band
+  removed: the strip above the photo shows a mirrored copy of the wall (`.hero::before`).

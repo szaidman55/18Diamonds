@@ -15,6 +15,7 @@
   --sans: "Raleway", "Helvetica Neue", Arial, sans-serif;
   --wrap: 1180px;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --color-18forge: #f37021;
 }
 
 *,
@@ -214,13 +215,26 @@ h3 {
 
 /* Hero: the wall sign sits centered at the top of the photo, copy is centered below it */
 .hero {
+  --hero-top: 36px;
+  --hero-size: cover;
   position: relative;
   display: flex;
   align-items: flex-end;
   height: clamp(600px, 52vw, 860px);
-  background: var(--navy-900) url("hero.webp") 50% 36px / cover no-repeat;
+  background: var(--navy-900) url("hero.webp") 50% var(--hero-top) / var(--hero-size) no-repeat;
   overflow: hidden;
   text-align: center;
+}
+
+/* The photo starts --hero-top down to leave room for the header; that strip shows a mirrored
+   copy of the top of the wall, so there is no band above the photo */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--hero-top);
+  background: url("hero.webp") 50% 0 / var(--hero-size) no-repeat;
+  transform: scaleY(-1);
 }
 
 .hero::after {
@@ -228,7 +242,7 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(11, 17, 32, 0.6) 0%, rgba(11, 17, 32, 0) 14%),
+    linear-gradient(180deg, rgba(11, 17, 32, 0.25) 0%, rgba(11, 17, 32, 0) 12%),
     linear-gradient(0deg, rgba(11, 17, 32, 0.9) 0%, rgba(11, 17, 32, 0.3) 30%, rgba(11, 17, 32, 0) 45%);
 }
 
@@ -537,6 +551,36 @@ h3 {
   color: var(--silver-100);
 }
 
+.footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-dark);
+  font-size: 12px;
+}
+
+.forged {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forged svg {
+  height: 1em;
+  width: auto;
+}
+
+.forged:hover,
+.forged:focus-visible {
+  color: var(--color-18forge);
+}
+
 /* Legal page */
 .legal {
   padding: 96px 0 120px;
@@ -598,15 +642,15 @@ h3 {
     display: block;
     height: auto;
     padding-top: calc(72px + 36vw);
-    background-size: 140% auto;
-    background-position: 50% 56px;
+    --hero-top: 56px;
+    --hero-size: 140% auto;
   }
 
   .hero::after {
     background: linear-gradient(
       180deg,
-      rgba(11, 17, 32, 0.6) 0,
-      rgba(11, 17, 32, 0) 90px,
+      rgba(11, 17, 32, 0.25) 0,
+      rgba(11, 17, 32, 0) 70px,
       rgba(11, 17, 32, 0) calc(56px + 50vw),
       var(--navy-950) calc(56px + 105vw)
     );
@@ -693,6 +737,16 @@ h3 {
 
   .footer-meta {
     align-items: flex-start;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom > span[aria-hidden] {
+    display: none;
   }
 
   .actions .btn {
