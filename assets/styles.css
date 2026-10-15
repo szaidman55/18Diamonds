@@ -638,19 +638,32 @@ h3 {
 /* Responsive */
 @media (max-aspect-ratio: 5/4) {
   /* Portrait screens: whole wall sign at the top, copy below it */
+  /* Fills the screen so the next (ivory) section does not show on first load; the copy sits at
+     the bottom */
   .hero {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
     padding-top: calc(72px + 36vw);
     --hero-top: 56px;
     --hero-size: 140% auto;
   }
 
+  /* No mirrored strip here: at this scale it shows a flipped copy of the sign. The strip is plain
+     navy and the top of the photo fades into it */
+  .hero::before {
+    display: none;
+  }
+
   .hero::after {
     background: linear-gradient(
       180deg,
-      rgba(11, 17, 32, 0.25) 0,
-      rgba(11, 17, 32, 0) 70px,
+      var(--navy-900) 0,
+      var(--navy-900) var(--hero-top),
+      rgba(17, 26, 46, 0) calc(var(--hero-top) + 28px),
       rgba(11, 17, 32, 0) calc(56px + 50vw),
       var(--navy-950) calc(56px + 105vw)
     );
