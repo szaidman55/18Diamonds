@@ -6,7 +6,7 @@ Contact: info@eighteendiamonds.com. Domain: eighteendiamonds.com (registered at 
 ## Stack
 
 - Plain static site, no build step: `index.html`, `privacy.html`, `assets/`.
-- Hosted on Vercel (Hobby), deployed automatically from GitHub `szaidman55/18diamonds`, branch
+- Hosted on Vercel (Hobby, team "18D", project `18diamonds`), deployed automatically from GitHub `szaidman55/18diamonds`, branch
   `main`. Every push to `main` goes live.
 - `vercel.json` sets `cleanUrls`, so `privacy.html` is served at `/privacy`.
 - Fonts: Cormorant Garamond (headings) and Raleway (body) from Google Fonts.
@@ -41,4 +41,8 @@ npx serve@14.2.4 -l 4321 .
 ## Status
 
 - 2026-10-15: first version of landing page and privacy page built and pushed.
-- Next: add domain in Vercel, update GoDaddy DNS, confirm live site.
+- 2026-10-15: Vercel project created and deployed (https://18diamonds.vercel.app). Domains added:
+  `www.eighteendiamonds.com` is the primary domain, `eighteendiamonds.com` redirects to it (308).
+  GoDaddy DNS set: `A @ 216.198.79.1` (new record) and `CNAME www cd4c18f513f8d8da.vercel-dns-017.com`
+  (was `eighteendiamonds.com.`). Email records (Microsoft 365 MX, SPF, autodiscover) unchanged.
+  Vercel reported www as Valid Configuration; SSL for the apex was being issued.

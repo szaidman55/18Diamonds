@@ -3,6 +3,18 @@
 The site is hosted on Vercel and deployed from the GitHub repo `szaidman55/18diamonds`.
 The domain stays registered at GoDaddy; only two DNS records change.
 
+## Current setup (done 2026-10-15)
+
+| Type  | Name  | Value                                  |
+| ----- | ----- | -------------------------------------- |
+| A     | `@`   | `216.198.79.1`                         |
+| CNAME | `www` | `cd4c18f513f8d8da.vercel-dns-017.com`  |
+
+`www.eighteendiamonds.com` is the primary domain; `eighteendiamonds.com` redirects to it.
+GoDaddy asks for identity verification (text code or security key) on every DNS change.
+
+The steps below explain how this was set up.
+
 ## 1. Add the domain in Vercel
 
 1. Open the project in the Vercel dashboard.
