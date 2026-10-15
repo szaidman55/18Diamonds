@@ -212,14 +212,15 @@ h3 {
   letter-spacing: 0.16em;
 }
 
-/* Hero: landscape screens show the wall sign in the upper part, copy below it */
+/* Hero: the wall sign sits centered at the top of the photo, copy is centered below it */
 .hero {
   position: relative;
   display: flex;
   align-items: flex-end;
-  height: clamp(560px, 50vw, 820px);
-  background: var(--navy-900) url("hero.webp") 50% 62% / cover no-repeat;
+  height: clamp(600px, 52vw, 860px);
+  background: var(--navy-900) url("hero.webp") 50% 36px / cover no-repeat;
   overflow: hidden;
+  text-align: center;
 }
 
 .hero::after {
@@ -227,8 +228,8 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(11, 17, 32, 0.6) 0%, rgba(11, 17, 32, 0) 18%),
-    linear-gradient(0deg, rgba(11, 17, 32, 0.97) 0%, rgba(11, 17, 32, 0.6) 32%, rgba(11, 17, 32, 0) 52%);
+    linear-gradient(180deg, rgba(11, 17, 32, 0.6) 0%, rgba(11, 17, 32, 0) 14%),
+    linear-gradient(0deg, rgba(11, 17, 32, 0.9) 0%, rgba(11, 17, 32, 0.3) 30%, rgba(11, 17, 32, 0) 45%);
 }
 
 .hero .wrap {
@@ -237,9 +238,20 @@ h3 {
   padding-bottom: clamp(32px, 4.5vw, 64px);
 }
 
+.hero .eyebrow::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+}
+
+.hero .actions {
+  justify-content: center;
+}
+
 .hero .lede {
-  max-width: 62ch;
-  margin: 16px 0 28px;
+  max-width: 900px;
+  margin: 16px auto 28px;
   font-size: 17px;
   color: var(--silver-300);
 }
@@ -585,9 +597,9 @@ h3 {
   .hero {
     display: block;
     height: auto;
-    padding-top: calc(56px + 68vw);
-    background-size: 160% auto;
-    background-position: 50% 48px;
+    padding-top: calc(72px + 36vw);
+    background-size: 140% auto;
+    background-position: 50% 56px;
   }
 
   .hero::after {
@@ -595,8 +607,8 @@ h3 {
       180deg,
       rgba(11, 17, 32, 0.6) 0,
       rgba(11, 17, 32, 0) 90px,
-      rgba(11, 17, 32, 0) calc(48px + 52vw),
-      var(--navy-950) calc(48px + 92vw)
+      rgba(11, 17, 32, 0) calc(56px + 50vw),
+      var(--navy-950) calc(56px + 105vw)
     );
   }
 
@@ -692,7 +704,8 @@ h3 {
     letter-spacing: 0.18em;
   }
 
-  .hero .eyebrow::before {
+  .hero .eyebrow::before,
+  .hero .eyebrow::after {
     display: none;
   }
 }

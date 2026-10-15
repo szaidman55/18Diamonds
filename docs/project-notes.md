@@ -14,7 +14,8 @@ Address: 20 W 47th St, New York, NY 10036. Phone: (212) 542-0949. Email: info@ei
 
 ## Assets
 
-- `assets/hero.webp`: 3D wall sign photo, used as the hero background.
+- `assets/hero.webp`: 3D wall sign photo with the logo centered at the top, used as the hero
+  background; hero copy is centered below the sign.
 - `assets/logo.svg`: horizontal logo (icon + "Eighteen Diamonds"), original colors.
   Source: `iCloudDrive/018 Logos/Definitif/Logos/Logo 18 D outline.svg` (vector equivalent of
   `18D Outlined.ai`).
