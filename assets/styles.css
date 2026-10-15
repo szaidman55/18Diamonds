@@ -25,6 +25,7 @@
 }
 
 html {
+  background: var(--navy-950);
   scroll-behavior: smooth;
   scroll-padding-top: 76px;
 }
@@ -641,14 +642,15 @@ h3 {
 @media (max-aspect-ratio: 5/4) {
   /* Portrait screens: whole wall sign at the top, copy below it */
   /* Fills the screen so the next (ivory) section does not show on first load; the copy sits at
-     the bottom */
+     the bottom. lvh, not svh: iPhone Safari draws its toolbar over the page, and with svh the ivory
+     section showed through under it */
   .hero {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: auto;
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100lvh;
     padding-top: calc(72px + 36vw);
     --hero-top: 56px;
     --hero-size: 140% auto;
