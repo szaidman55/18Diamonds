@@ -20,6 +20,9 @@ Address: 20 W 47th St, New York, NY 10036. Phone: (212) 542-0949. Email: info@ei
   Source: `iCloudDrive/018 Logos/Definitif/Logos/Logo 18 D outline.svg` (vector equivalent of
   `18D Outlined.ai`).
 - `assets/logo-light.svg`: same logo with light text, for the dark header.
+- `assets/logo-header.svg`: header-only version of `logo-light.svg` with the "Eighteen Diamonds"
+  wording twice as large and set further from the diamond (owner request). The footer keeps
+  `logo-light.svg`. On phones the header phone number uses tighter letter spacing so both fit.
 - `assets/mark.svg`: diamond icon only, also used as favicon.
 
 ## Decisions
