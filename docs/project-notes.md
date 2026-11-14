@@ -65,3 +65,5 @@ npx serve@14.2.4 -l 4321 .
 - 2026-10-15: footer bottom line: copyright left, "Forged by" + 18 Forge logo centered, linking to
   https://18forge.com (hover color #f37021), same credit as the 58 Diamonds site. Hero top band
   removed: the strip above the photo shows a mirrored copy of the wall (`.hero::before`).
+- 2026-11-14: working copy on the always-on Mac at `~/Documents/GitHub/18diamonds-inc`; the site is now
+  part of the regular checks and briefings (priority 5). Live check: https://www.eighteendiamonds.com returns 200.
