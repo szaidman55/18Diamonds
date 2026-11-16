@@ -67,3 +67,4 @@ npx serve@14.2.4 -l 4321 .
   removed: the strip above the photo shows a mirrored copy of the wall (`.hero::before`).
 - 2026-11-14: working copy on the always-on Mac at `~/Documents/GitHub/18diamonds-inc`; the site is now
   part of the regular checks and briefings (priority 5). Live check: https://www.eighteendiamonds.com returns 200.
+- 2026-11-16: handoff status file (STATUS.md) added on branch `status-handoff-2026-11-16`, not merged; `main` unchanged.
