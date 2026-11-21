@@ -1,6 +1,6 @@
 # Eighteen Diamonds: status
 
-**Updated:** 2026-11-19 19:27 (handoff run, Mac). It lives on branch `status-handoff`, not `main`: pushing `main` publishes the live site on Vercel.
+**Updated:** 2026-11-21 21:00 (handoff run, Mac). Project facts are from the 19 Nov check; git state re-checked 21 Nov. It lives on branch `status-handoff`, not `main`: pushing `main` publishes the live site on Vercel. Local `main` has no commits origin lacks.
 
 ## State
 Static landing page (`index.html`, `privacy.html`, `assets/`) on Vercel, project `18diamonds` (team "18D"), deployed from `main` at https://www.eighteendiamonds.com. Latest commit on `origin/main` is 7a53558 (14 Nov): phone hero spacing and scroll chevron, footer logo wording matches the header. The Mac working copy is clean and matches `origin/main`.
